@@ -1,0 +1,3052 @@
+.version sol 0.71.0
+
+.macro constructor
+DROP
+GETGLOB 2
+ISNULL
+IFREF {
+	.inline __c4_to_c7_with_init_storage
+}
+GETGLOB 6
+THROWIF 51
+ENDS
+ACCEPT
+CALLREF {
+	.inline __c7_to_c4
+}
+THROW 0
+
+.macro draw
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc mesh.sol, 5
+OVER
+PUSHCONT {
+	LDU 256
+	LDREF
+	ENDS
+	CTOS
+}
+PUSHCONT {
+	LDU 256
+}
+IFELSE
+LDU 256
+ENDS
+.loc mesh.sol, 0
+CALLREF {
+	.inline __draw_d2b8035a_internal_macro
+}
+OVER
+PUSHCONT {
+	PUSH S3
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 2829002010
+	STUR 130
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP
+}
+IFELSE
+IFREF {
+	.inline __c7_to_c4
+}
+THROW 0
+
+.macro draw_d2b8035a_internal_macro
+.loc mesh.sol, 6
+CALLREF {
+	.inline ___draw_2f346200_internal_macro
+}
+.loc mesh.sol, 0
+
+.globl	_draw_2f346200_internal
+.type	_draw_2f346200_internal, @function
+.inline ___draw_2f346200_internal_macro
+
+.macro _draw_2f346200_internal_macro
+.loc mesh.sol, 10
+PUSHREF {
+	.blob x324a
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+PUSHREF {
+	.blob x33376d
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHINT 1
+DUP
+PUSHINT 38
+PUSHINT 23
+CALLREF {
+	.inline ___draw_roundish_menu_bound_2db3d436_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 12
+CALLREF {
+	.inline __libCommander_no_obj_default_commander_4dbd1221_macro
+}
+.loc mesh.sol, 13
+ROLL 3
+CALLREF {
+	.inline ___from_handle_e4d3d7ed_internal_macro
+}
+BLKDROP2 4, 2
+.loc mesh.sol, 14
+OVER
+GTINT 0
+PUSHCONT {
+	.loc mesh.sol, 15
+	BLKPUSH 2, 2
+	SETINDEX 2
+	POP S3
+	.loc mesh.sol, 0
+}
+IF
+.loc mesh.sol, 16
+DUP
+GTINT 0
+PUSHCONT {
+	.loc mesh.sol, 17
+	PUSH2 S2, S0
+	SETINDEX 1
+	POP S3
+	.loc mesh.sol, 0
+}
+IF
+.loc mesh.sol, 19
+DROP2
+PUSHINT 1
+PUSHREF
+.compute $inline_array_line_18_column_27_ast_id_93$
+PAIR
+.loc mesh.sol, 20
+PUSH S3
+EQINT 108
+PUSHCONT {
+	.loc mesh.sol, 21
+	PUSH S2
+	PUSHINT 9
+	PUSHREF
+	.compute $inline_array_line_202_column_39_ast_id_1183$
+	PAIR
+	PUSHINT 3
+	PUSHINT 2
+	PUSHINT 1
+	PUSHINT 22
+	PUSH S7
+	CALLREF {
+		.inline __libCommander_with_obj_stats_commander_ca012097_macro
+	}
+	SWAP
+	POP S9
+	CALLREF {
+		.inline ___draw_list_3902012c_free_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S3
+	.loc mesh.sol, 22
+	BLKPUSH 2, 2
+	CALLREF {
+		.inline __libCommander_with_obj_equipment_commander_0f5c56a0_macro
+	}
+	SWAP
+	POP S4
+	PUSHINT 8
+	PUSHINT 12
+	PUSHINT 0
+	PUSH2 S0, S5
+	CALLREF {
+		.inline ___draw_list_3902012c_free_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S3
+}
+PUSHCONT {
+	PUSH S3
+	EQINT 107
+	PUSHCONT {
+		.loc mesh.sol, 24
+		PUSH S2
+		PUSHREF {
+			.blob x20202020
+		}
+		PUSH S3
+		SECOND
+		PUSHINT 3
+		PUSHREF
+		.compute $inline_array_line_121_column_28_ast_id_722$
+		PAIR
+		SECOND
+		PUSHINT 32
+		DICTUGETREF
+		THROWIFNOT 50
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+		PUSHINT 0
+		NEWDICT
+		PUSHINT 1
+		PUSHCONT {
+			ROT
+			PUSH S2
+			INC
+			XCHG S3
+			ROT
+			PUSHINT 32
+			DICTUSETREF
+		}
+		REPEAT
+		PAIR
+		PUSHINT 3
+		PUSHINT 2
+		PUSHINT 1
+		PUSHINT 0
+		PUSHINT 1
+		PUSHREF
+		.compute $inline_array_line_23_column_82_ast_id_149$
+		PAIR
+		CALLREF {
+			.inline ___draw_list_3902012c_free_internal_macro
+		}
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+		POP S3
+		.loc mesh.sol, 25
+		OVER
+		SECOND
+		PUSHINT 3
+		PUSHREF
+		.compute $inline_array_line_141_column_27_ast_id_790$
+		PAIR
+		SECOND
+		PUSHINT 32
+		DICTUGET
+		THROWIFNOT 50
+		CALLREF {
+			LDU 16
+			LDU 8
+			LDU 8
+			LDU 8
+			LDU 16
+			LDU 16
+			LDU 16
+			LDU 16
+			ENDS
+			TUPLE 8
+		}
+		.loc mesh.sol, 26
+		CALLREF {
+			.inline __libCommodity_no_obj_stats_commodity_313892ca_macro
+		}
+		.loc mesh.sol, 27
+		PUXC S3, S-1
+		PUSHINT 3
+		PUSHINT 4
+		PUSHINT 0
+		PUSH2 S0, S5
+		CALLREF {
+			.inline ___draw_list_3902012c_free_internal_macro
+		}
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+		POP S3
+	}
+	PUSHCONT {
+		PUSH S3
+		EQINT 112
+		PUSHCONT {
+			.loc mesh.sol, 29
+			OVER
+			THIRD
+			PUSHINT 3
+			PUSHREF
+			.compute $inline_array_line_141_column_27_ast_id_790$
+			PAIR
+			SECOND
+			PUSHINT 32
+			DICTUGET
+			THROWIFNOT 50
+			CALLREF {
+				LDU 16
+				LDU 8
+				LDU 8
+				LDU 8
+				LDU 16
+				LDU 16
+				LDU 16
+				LDU 16
+				ENDS
+				TUPLE 8
+			}
+			.loc mesh.sol, 30
+			PUSH S3
+			PUSHINT 7
+			PUSHREF
+			.compute $inline_array_line_155_column_36_ast_id_841$
+			PAIR
+			PUSHINT 3
+			PUSHINT 2
+			PUSHINT 1
+			PUSHINT 21
+			ROLL 6
+			CALLREF {
+				.inline __libPlanet_with_obj_stats_planet_d8782373_macro
+			}
+			NIP
+			CALLREF {
+				.inline ___draw_list_3902012c_free_internal_macro
+			}
+			CALLREF {
+				.inline __concatenateStrings_macro
+			}
+			POP S3
+		}
+		PUSHCONT {
+			PUSH S3
+			EQINT 111
+			PUSHCONT {
+				.loc mesh.sol, 32
+				PUSH S2
+				PUSHREF {
+					.blob x20202020
+				}
+				PUSH S3
+				SECOND
+				PUSHINT 3
+				PUSHREF
+				.compute $inline_array_line_121_column_28_ast_id_722$
+				PAIR
+				SECOND
+				PUSHINT 32
+				DICTUGETREF
+				THROWIFNOT 50
+				CALLREF {
+					.inline __concatenateStrings_macro
+				}
+				PUSHINT 0
+				NEWDICT
+				PUSHINT 1
+				PUSHCONT {
+					ROT
+					PUSH S2
+					INC
+					XCHG S3
+					ROT
+					PUSHINT 32
+					DICTUSETREF
+				}
+				REPEAT
+				PAIR
+				PUSHINT 3
+				PUSHINT 2
+				PUSHINT 1
+				PUSHINT 0
+				PUSHINT 1
+				PUSHREF
+				.compute $inline_array_line_31_column_82_ast_id_232$
+				PAIR
+				CALLREF {
+					.inline ___draw_list_3902012c_free_internal_macro
+				}
+				CALLREF {
+					.inline __concatenateStrings_macro
+				}
+				POP S3
+				.loc mesh.sol, 33
+				PUSH S2
+				PUSHINT 3
+				PUSHREF
+				.compute $inline_array_line_121_column_28_ast_id_722$
+				PAIR
+				PUSHINT 3
+				PUSHINT 4
+				PUSHINT 0
+				PUSH2 S0, S5
+				CALLREF {
+					.inline ___draw_list_3902012c_free_internal_macro
+				}
+				CALLREF {
+					.inline __concatenateStrings_macro
+				}
+				POP S3
+				.loc mesh.sol, 0
+			}
+			IF
+		}
+		IFELSE
+	}
+	IFELSE
+}
+IFELSE
+.loc mesh.sol, 36
+DROP2
+NIP
+.loc mesh.sol, 0
+
+.macro onc
+DROP
+GETGLOB 6
+THROWIFNOT 76
+.loc mesh.sol, 38
+LDU 256
+LDREF
+ENDS
+.loc mesh.sol, 0
+CALLREF {
+	.inline __onc_1e6a419d_internal_macro
+}
+PUSH S2
+PUSHCONT {
+	PUSH S4
+	CTOS
+	LDU 2
+	LDMSGADDR
+	DROP
+	NIP
+	NEWC
+	STSLICECONST xc
+	STSLICE
+	PUSHINT 98
+	STZEROES
+	REVERSE 2, 1
+	STSLICECONST xba381a25
+	STU 256
+	STREF
+	ENDC
+	PUSHINT 0
+	SENDRAWMSG
+}
+PUSHCONT {
+	DROP2
+}
+IFELSE
+IFREF {
+	.inline __c7_to_c4
+}
+THROW 0
+
+.macro onc_1e6a419d_internal_macro
+.loc mesh.sol, 39
+CALLREF {
+	.inline ___onc_0b8fc574_internal_macro
+}
+.loc mesh.sol, 0
+
+.globl	_onc_0b8fc574_internal
+.type	_onc_0b8fc574_internal, @function
+.inline ___onc_0b8fc574_internal_macro
+
+.macro _onc_0b8fc574_internal_macro
+.loc mesh.sol, 41
+PUSHINT 0
+PUSHREF {
+}
+PUSH2 S0, S2
+.loc mesh.sol, 43
+CTOS
+SEMPTY
+PUSHCONT {
+	ROTREV
+	BLKDROP2 3, 2
+}
+IFJMP
+.loc mesh.sol, 45
+ROLL 3
+CTOS
+PUSHINT 0
+CALLREF {
+	PUSHINT 127
+	DIVMOD
+	ROTREV
+	PUSHCONT {
+		PLDREF
+		CTOS
+	}
+	REPEAT
+	SWAP
+	MULCONST 8
+	SDSKIPFIRST
+	PLDU 8
+}
+.loc mesh.sol, 47
+PUSH S4
+CALLREF {
+	.inline ___from_handle_e4d3d7ed_internal_macro
+}
+.loc mesh.sol, 48
+ROT
+.loc mesh.sol, 50
+PUSH S6
+EQINT 113
+PUSHCONT {
+	.loc mesh.sol, 51
+	PUSH S8
+	PUSHREF {
+		.blob x6563686f204279652120262620657869742030
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S9
+}
+PUSHCONT {
+	PUSH S6
+	GTINT 47
+	PUSH S7
+	LESSINT 58
+	AND
+	PUSHCONT {
+		.loc mesh.sol, 53
+		PUSH S6
+		ADDCONST -48
+		UFITS 8
+		.loc mesh.sol, 54
+		NIP
+	}
+	PUSHCONT {
+		PUSH S6
+		EQINT 108
+		PUSH S7
+		EQINT 107
+		PUSH S8
+		EQINT 112
+		PUSH S9
+		EQINT 111
+		OR
+		OR
+		OR
+		PUSHCONT {
+			.loc mesh.sol, 56
+			PUSH3 S7, S10, S6
+			CALLREF {
+				.inline ___draw_2f346200_internal_macro
+			}
+			CALLREF {
+				.inline __concatenateStrings_macro
+			}
+			POP S8
+		}
+		PUSHCONT {
+			PUSH S6
+			EQINT 114
+			PUSHCONT {
+				.loc mesh.sol, 58
+				CALLREF {
+					.inline __libCommander_no_obj_default_commander_4dbd1221_macro
+				}
+				.loc mesh.sol, 59
+				OVER
+				UFITS 16
+				CALLREF {
+					.inline __libCommander_with_obj_target_system_b896b76c_macro
+				}
+				NIP
+				PUSHCONT {
+					.loc mesh.sol, 60
+					PUSH S7
+					PUSHREF {
+						.blob x7461726765742073656c6563746564
+					}
+					CALLREF {
+						.inline __concatenateStrings_macro
+					}
+					POP S8
+					.loc mesh.sol, 61
+					DUP
+					POP S3
+				}
+				PUSHCONT {
+					.loc mesh.sol, 63
+					PUSH S7
+					PUSHREF {
+						.blob x6661696c656420746f2073656c65637420746172676574
+					}
+					CALLREF {
+						.inline __concatenateStrings_macro
+					}
+					POP S8
+				}
+				IFELSE
+				.loc mesh.sol, 0
+			}
+			PUSHCONT {
+				PUSH S6
+				EQINT 104
+				PUSHCONT {
+					.loc mesh.sol, 65
+					PUSH S2
+					GTINT 0
+					PUSHCONT {
+						.loc mesh.sol, 66
+						PUSH S2
+						POP S2
+						.loc mesh.sol, 67
+						PUSH S7
+						PUSHREF {
+							.blob x6a756d70656421
+						}
+					}
+					PUSHCONT {
+						.loc mesh.sol, 69
+						PUSH S7
+						PUSHREF {
+							.blob x6a756d70206661696c656421
+						}
+					}
+					IFELSE
+					CALLREF {
+						.inline __concatenateStrings_macro
+					}
+					POP S8
+					.loc mesh.sol, 0
+				}
+				IF
+			}
+			IFELSE
+		}
+		IFELSE
+	}
+	IFELSE
+}
+IFELSE
+.loc mesh.sol, 72
+ROTREV
+CALLREF {
+	.inline ___to_handle_38ef7a5c_internal_macro
+}
+POP S4
+.loc mesh.sol, 73
+DROP
+DUP
+CTOS
+SEMPTY
+PUSHCONT {
+	.loc mesh.sol, 74
+	DUP2
+	CALLREF {
+		.inline __print_cmd_46fc2e6a_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S2
+	.loc mesh.sol, 0
+}
+IFNOT
+.loc mesh.sol, 0
+DROP
+BLKDROP2 1, 2
+
+.globl	print_cmd_46fc2e6a_internal
+.type	print_cmd_46fc2e6a_internal, @function
+.inline __print_cmd_46fc2e6a_internal_macro
+
+.macro print_cmd_46fc2e6a_internal_macro
+.loc mesh.sol, 78
+PUSHREF {
+	.blob x7072696e74662022
+}
+SWAP
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob x223b
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 0
+
+.globl	_from_handle_e4d3d7ed_internal
+.type	_from_handle_e4d3d7ed_internal, @function
+.inline ___from_handle_e4d3d7ed_internal_macro
+
+.macro _from_handle_e4d3d7ed_internal_macro
+.loc mesh.sol, 82
+DUP
+PUSHPOW2DEC 8
+AND
+UFITS 8
+OVER
+RSHIFT 8
+PUSHPOW2DEC 8
+AND
+UFITS 8
+PUSH S2
+RSHIFT 16
+PUSHPOW2DEC 8
+AND
+UFITS 8
+PUSH S3
+RSHIFT 24
+PUSHPOW2DEC 8
+AND
+UFITS 8
+PUSH S4
+RSHIFT 32
+PUSHPOW2DEC 8
+AND
+UFITS 8
+ROLL 5
+RSHIFT 40
+PUSHPOW2DEC 8
+AND
+UFITS 8
+.loc mesh.sol, 0
+
+.globl	_to_handle_38ef7a5c_internal
+.type	_to_handle_38ef7a5c_internal, @function
+.inline ___to_handle_38ef7a5c_internal_macro
+
+.macro _to_handle_38ef7a5c_internal_macro
+.loc mesh.sol, 85
+BLKSWAP 2, 4
+LSHIFT 8
+ADD
+ROLL 4
+LSHIFT 16
+ADD
+ROLL 3
+LSHIFT 24
+ADD
+ROT
+LSHIFT 32
+ADD
+SWAP
+LSHIFT 40
+ADD
+.loc mesh.sol, 0
+
+.macro uc
+DROP
+GETGLOB 6
+THROWIFNOT 76
+GETGLOB 2
+ISNULL
+IFREF {
+	.inline __c4_to_c7
+}
+.loc mesh.sol, 91
+LDREF
+ENDS
+.loc mesh.sol, 0
+CALLREF {
+	.inline __uc_0dd47239_internal_macro
+}
+CALLREF {
+	.inline __c7_to_c4
+}
+THROW 0
+
+.macro uc_0dd47239_internal_macro
+.loc mesh.sol, 92
+ACCEPT
+.loc mesh.sol, 93
+CALLREF {
+	.inline __c7_to_c4
+}
+COMMIT
+.loc mesh.sol, 94
+DUP
+SETCODE
+.loc mesh.sol, 95
+CTOS
+DUP
+PUSHSLICE x8adb35
+SDEQ
+PUSHCONT {
+	PLDREFIDX 1
+	CTOS
+}
+IF
+PLDREF
+CTOS
+BLESS
+POP C3
+.loc mesh.sol, 0
+
+.macro c4_to_c7
+PUSHROOT
+CTOS
+LDU 256 ; pubkey c4
+LDU 64 ; pubkey timestamp c4
+LDU 1 ; ctor flag
+NIP
+LDDICT
+ENDS
+SETGLOB 10
+SETGLOB 3
+SETGLOB 2
+
+.macro c4_to_c7_with_init_storage
+PUSHROOT
+CTOS
+SBITS
+GTINT 1
+PUSHCONT {
+	PUSHINT 0
+	PUSHROOT
+	CTOS
+	PLDDICT ; D
+	NEWDICT
+	SETGLOB 10
+	PUSHINT 64
+	DICTUGET
+	THROWIFNOT 61
+	PLDU 256
+	SETGLOB 2
+	PUSHINT 0 ; timestamp
+	SETGLOB 3
+}
+IFREFELSE {
+	.inline __c4_to_c7
+}
+
+.macro c7_to_c4
+GETGLOB 10
+GETGLOB 3
+GETGLOB 2
+NEWC
+STU 256
+STU 64
+STONE
+STDICT
+ENDC
+POPROOT
+
+.macro upd_only_time_in_c4
+PUSHROOT
+CTOS
+LDU 256
+LDU 64
+NIP
+GETGLOB 3
+ROT
+NEWC
+STU 256
+STU 64
+STSLICE
+ENDC
+POPROOT
+
+.internal-alias :main_internal, 0
+.internal :main_internal
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+PUSH S2
+CTOS
+PLDU 4
+MODPOW2 1
+IFRET
+OVER
+SEMPTY ; isEmpty
+IFJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+OVER
+LDUQ 32  ; [funcId] body' ok
+THROWIFNOT 60
+OVER
+IFNOTJMPREF {
+	GETGLOB 6
+	THROWIFNOT 76
+}
+SWAP
+CALLREF {
+	.inline __public_function_selector
+}
+THROW 60
+
+.internal-alias :main_external, -1
+.internal :main_external
+PUSHROOT
+CTOS
+SBITS
+NEQINT 1
+SETGLOB 6
+OVER
+CALLREF {
+	.inline __c4_to_c7_with_init_storage
+}
+LDU 1 ; haveSign msgSlice
+SWAP
+PUSHCONT {
+	PUSHPOW2 9
+	LDSLICEX
+	DUP
+	MYADDR
+	NEWC
+	STSLICE
+	STSLICE
+	ENDC
+	HASHCU
+	ROT
+	GETGLOB 2
+	CHKSIGNU
+	THROWIFNOT 40
+}
+IF
+LDU 64 ; timestamp msgSlice
+SWAP
+.inline __replay_protection_macro
+LDU 32 ; funcId body
+SWAP
+CALLREF {
+	.inline __public_function_selector
+}
+THROW 60
+
+.globl	libPlanet_with_obj_stats_planet_d8782373
+.type	libPlanet_with_obj_stats_planet_d8782373, @function
+.inline __libPlanet_with_obj_stats_planet_d8782373_macro
+
+.macro libPlanet_with_obj_stats_planet_d8782373_macro
+.loc mesh.sol, 160
+DUP
+UNTUPLE 8
+DROP
+.loc mesh.sol, 161
+TUPLE 0
+NEWC
+ROLL 3
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x206b6d
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+TUPLE 0
+NEWC
+ROLL 3
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+PUSHREF {
+	.blob x204d204352
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROT
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x2042696c6c696f6e
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+TUPLE 0
+NEWC
+ROLL 5
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+ROLL 4
+PUSHINT 8
+PUSHREF
+.compute $inline_array_line_157_column_29_ast_id_865$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 5
+PUSHINT 8
+PUSHREF
+.compute $inline_array_line_156_column_34_ast_id_853$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 6
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+PUSHINT 0
+NEWDICT
+PUSHINT 7
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+PAIR
+.loc mesh.sol, 0
+
+.globl	libPlanet_no_obj_stats_planet_d8782373
+.type	libPlanet_no_obj_stats_planet_d8782373, @function
+.inline __libPlanet_no_obj_stats_planet_d8782373_macro
+
+.macro libPlanet_no_obj_stats_planet_d8782373_macro
+.loc mesh.sol, 160
+UNTUPLE 8
+DROP
+.loc mesh.sol, 161
+TUPLE 0
+NEWC
+ROLL 3
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x206b6d
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+TUPLE 0
+NEWC
+ROLL 3
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+PUSHREF {
+	.blob x204d204352
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROT
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x2042696c6c696f6e
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+TUPLE 0
+NEWC
+ROLL 5
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+ROLL 4
+PUSHINT 8
+PUSHREF
+.compute $inline_array_line_157_column_29_ast_id_865$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 5
+PUSHINT 8
+PUSHREF
+.compute $inline_array_line_156_column_34_ast_id_853$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 6
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+PUSHINT 0
+NEWDICT
+PUSHINT 7
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+PAIR
+.loc mesh.sol, 0
+
+.globl	libCommodity_with_obj_stats_commodity_313892ca
+.type	libCommodity_with_obj_stats_commodity_313892ca, @function
+.inline __libCommodity_with_obj_stats_commodity_313892ca_macro
+
+.macro libCommodity_with_obj_stats_commodity_313892ca_macro
+PUSHINT 0
+NEWDICT
+PAIR
+.loc mesh.sol, 173
+PUSHINT 0
+PUSHREF {
+	.blob x50524f4455435420202020202020554e495420205052494345205155414e54495459
+}
+PUSH S2
+.loc mesh.sol, 174
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETREF
+PAIR
+POP S2
+.loc mesh.sol, 175
+PUSHINT 0
+PUSHCONT {
+	DUP
+	LESSINT 17
+}
+PUSHCONT {
+	.loc mesh.sol, 176
+	DUP
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_119_column_54_ast_id_715$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	.loc mesh.sol, 177
+	DUP
+	PUSHINT 16
+	ROT
+	PUSHPOW2DEC 32
+	CDATASIZE
+	DROP
+	NIP
+	RSHIFT 3
+	SUB
+	UFITS 32
+	PUSHINT 14
+	PUSHREF
+	.compute $inline_array_line_163_column_22_ast_id_944$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	.loc mesh.sol, 178
+	OVER
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_166_column_30_ast_id_969$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 8
+	PUSHINT 3
+	PUSHREF
+	.compute $inline_array_line_168_column_33_ast_id_976$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	.loc mesh.sol, 179
+	DUP2
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S2
+	.loc mesh.sol, 180
+	PUSH S5
+	INDEX 3
+	PUSH S6
+	SECOND
+	ADD
+	UFITS 8
+	PUSH S6
+	THIRD
+	ADD
+	UFITS 8
+	PUSHINT 7
+	DIV
+	.loc mesh.sol, 181
+	PUSH S3
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_169_column_36_ast_id_997$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 16
+	MUL
+	UFITS 16
+	.loc mesh.sol, 182
+	PUSH S2
+	PUSHREF {
+		.blob x2020
+	}
+	ROT
+	CALLREF {
+		.inline __f3_d7b7913b_free_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	PUSHREF {
+		.blob x2020
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S2
+	.loc mesh.sol, 183
+	PUSH S2
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_170_column_35_ast_id_1018$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 8
+	POP S4
+	.loc mesh.sol, 184
+	PUSH2 S1, S3
+	GTINT 0
+	PUSHCONT {
+		TUPLE 0
+		NEWC
+		PUSH S6
+		PUSHINT 3
+		FALSE
+		DUP
+		CALLREF {
+			.inline __convertIntToDecStr_macro
+		}
+		CALLREF {
+			.inline __assembleList_macro
+		}
+		PUSH S2
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+	}
+	PUSHCONT {
+		PUSHREF {
+			.blob x202d20
+		}
+	}
+	IFELSE
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	BLKDROP2 2, 1
+	.loc mesh.sol, 185
+	PUSH S3
+	UNPAIR
+	OVER
+	INC
+	ROLLREV 3
+	PUSHINT 32
+	DICTUSETREF
+	PAIR
+	POP S3
+	.loc mesh.sol, 175
+	INC
+	.loc mesh.sol, 0
+}
+WHILE
+DROP2
+.loc mesh.sol, 0
+
+.globl	libCommodity_no_obj_stats_commodity_313892ca
+.type	libCommodity_no_obj_stats_commodity_313892ca, @function
+.inline __libCommodity_no_obj_stats_commodity_313892ca_macro
+
+.macro libCommodity_no_obj_stats_commodity_313892ca_macro
+.loc mesh.sol, 172
+PUSHINT 0
+NEWDICT
+PAIR
+.loc mesh.sol, 173
+PUSHINT 0
+PUSHREF {
+	.blob x50524f4455435420202020202020554e495420205052494345205155414e54495459
+}
+PUSH S2
+.loc mesh.sol, 174
+UNPAIR
+OVER
+INC
+ROLLREV 3
+PUSHINT 32
+DICTUSETREF
+PAIR
+POP S2
+.loc mesh.sol, 175
+PUSHINT 0
+PUSHCONT {
+	DUP
+	LESSINT 17
+}
+PUSHCONT {
+	.loc mesh.sol, 176
+	DUP
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_119_column_54_ast_id_715$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	.loc mesh.sol, 177
+	DUP
+	PUSHINT 16
+	ROT
+	PUSHPOW2DEC 32
+	CDATASIZE
+	DROP
+	NIP
+	RSHIFT 3
+	SUB
+	UFITS 32
+	PUSHINT 14
+	PUSHREF
+	.compute $inline_array_line_163_column_22_ast_id_944$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	.loc mesh.sol, 178
+	OVER
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_166_column_30_ast_id_969$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 8
+	PUSHINT 3
+	PUSHREF
+	.compute $inline_array_line_168_column_33_ast_id_976$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGETREF
+	THROWIFNOT 50
+	.loc mesh.sol, 179
+	DUP2
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S2
+	.loc mesh.sol, 180
+	PUSH S5
+	INDEX 3
+	PUSH S6
+	SECOND
+	ADD
+	UFITS 8
+	PUSH S6
+	THIRD
+	ADD
+	UFITS 8
+	PUSHINT 7
+	DIV
+	.loc mesh.sol, 181
+	PUSH S3
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_169_column_36_ast_id_997$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 16
+	MUL
+	UFITS 16
+	.loc mesh.sol, 182
+	PUSH S2
+	PUSHREF {
+		.blob x2020
+	}
+	ROT
+	CALLREF {
+		.inline __f3_d7b7913b_free_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	PUSHREF {
+		.blob x2020
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S2
+	.loc mesh.sol, 183
+	PUSH S2
+	PUSHINT 17
+	PUSHREF
+	.compute $inline_array_line_170_column_35_ast_id_1018$
+	PAIR
+	SECOND
+	PUSHINT 32
+	DICTUGET
+	THROWIFNOT 50
+	PLDU 8
+	POP S4
+	.loc mesh.sol, 184
+	PUSH2 S1, S3
+	GTINT 0
+	PUSHCONT {
+		TUPLE 0
+		NEWC
+		PUSH S6
+		PUSHINT 3
+		FALSE
+		DUP
+		CALLREF {
+			.inline __convertIntToDecStr_macro
+		}
+		CALLREF {
+			.inline __assembleList_macro
+		}
+		PUSH S2
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+	}
+	PUSHCONT {
+		PUSHREF {
+			.blob x202d20
+		}
+	}
+	IFELSE
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	BLKDROP2 2, 1
+	.loc mesh.sol, 185
+	PUSH S3
+	UNPAIR
+	OVER
+	INC
+	ROLLREV 3
+	PUSHINT 32
+	DICTUSETREF
+	PAIR
+	POP S3
+	.loc mesh.sol, 175
+	INC
+	.loc mesh.sol, 0
+}
+WHILE
+DROP2
+NIP
+.loc mesh.sol, 0
+
+.globl	libCommander_no_obj_default_commander_4dbd1221
+.type	libCommander_no_obj_default_commander_4dbd1221, @function
+.inline __libCommander_no_obj_default_commander_4dbd1221_macro
+
+.macro libCommander_no_obj_default_commander_4dbd1221_macro
+.loc mesh.sol, 207
+PUSHINT 0
+BLKPUSH 2, 0
+PUSHREF {
+}
+PUSHINT 0
+BLKPUSH 5, 0
+TUPLE 10
+.loc mesh.sol, 208
+PUSHREF {
+	.blob x4a414d45534f4e
+}
+SETINDEX 3
+.loc mesh.sol, 209
+PUSHINT 70
+SETINDEX 5
+.loc mesh.sol, 210
+PUSHINT 1000
+SETINDEX 6
+.loc mesh.sol, 211
+PUSHINT 1
+SETINDEX 9
+.loc mesh.sol, 212
+PUSHINT 1
+SETINDEX 1
+.loc mesh.sol, 213
+PUSHINT 1
+SETINDEX 2
+.loc mesh.sol, 0
+
+.globl	libCommander_with_obj_equipment_commander_0f5c56a0
+.type	libCommander_with_obj_equipment_commander_0f5c56a0, @function
+.inline __libCommander_with_obj_equipment_commander_0f5c56a0_macro
+
+.macro libCommander_with_obj_equipment_commander_0f5c56a0_macro
+PUSHINT 0
+NEWDICT
+PAIR
+.loc mesh.sol, 216
+OVER
+INDEX 9
+.loc mesh.sol, 217
+PUSHINT 1
+.loc mesh.sol, 218
+PUSHINT 0
+.loc mesh.sol, 219
+PUSHCONT {
+	.loc mesh.sol, 220
+	BLKPUSH 2, 2
+	AND
+	GTINT 0
+	PUSHCONT {
+		.loc mesh.sol, 221
+		PUSH2 S3, S0
+		PUSHINT 7
+		PUSHREF
+		.compute $inline_array_line_205_column_34_ast_id_1204$
+		PAIR
+		SECOND
+		PUSHINT 32
+		DICTUGETREF
+		THROWIFNOT 50
+		SWAP
+		UNPAIR
+		OVER
+		INC
+		ROLLREV 3
+		PUSHINT 32
+		DICTUSETREF
+		PAIR
+		POP S4
+		.loc mesh.sol, 0
+	}
+	IF
+	.loc mesh.sol, 222
+	OVER
+	MULCONST 2
+	POP S2
+	.loc mesh.sol, 223
+	INC
+	.loc mesh.sol, 0
+	BLKPUSH 2, 2
+	LESS
+}
+UNTIL
+BLKDROP 3
+.loc mesh.sol, 0
+
+.globl	libCommander_no_obj_equipment_commander_0f5c56a0
+.type	libCommander_no_obj_equipment_commander_0f5c56a0, @function
+.inline __libCommander_no_obj_equipment_commander_0f5c56a0_macro
+
+.macro libCommander_no_obj_equipment_commander_0f5c56a0_macro
+.loc mesh.sol, 215
+PUSHINT 0
+NEWDICT
+PAIR
+.loc mesh.sol, 216
+SWAP
+INDEX 9
+.loc mesh.sol, 217
+PUSHINT 1
+.loc mesh.sol, 218
+PUSHINT 0
+.loc mesh.sol, 219
+PUSHCONT {
+	.loc mesh.sol, 220
+	BLKPUSH 2, 2
+	AND
+	GTINT 0
+	PUSHCONT {
+		.loc mesh.sol, 221
+		PUSH2 S3, S0
+		PUSHINT 7
+		PUSHREF
+		.compute $inline_array_line_205_column_34_ast_id_1204$
+		PAIR
+		SECOND
+		PUSHINT 32
+		DICTUGETREF
+		THROWIFNOT 50
+		SWAP
+		UNPAIR
+		OVER
+		INC
+		ROLLREV 3
+		PUSHINT 32
+		DICTUSETREF
+		PAIR
+		POP S4
+		.loc mesh.sol, 0
+	}
+	IF
+	.loc mesh.sol, 222
+	OVER
+	MULCONST 2
+	POP S2
+	.loc mesh.sol, 223
+	INC
+	.loc mesh.sol, 0
+	BLKPUSH 2, 2
+	LESS
+}
+UNTIL
+BLKDROP 3
+.loc mesh.sol, 0
+
+.globl	libCommander_with_obj_stats_commander_ca012097
+.type	libCommander_with_obj_stats_commander_ca012097, @function
+.inline __libCommander_with_obj_stats_commander_ca012097_macro
+
+.macro libCommander_with_obj_stats_commander_ca012097_macro
+.loc mesh.sol, 227
+DUP
+UNTUPLE 10
+DROP
+BLKDROP2 1, 8
+BLKDROP2 1, 4
+.loc mesh.sol, 228
+PUSHREF {
+	.blob x
+}
+DUP
+ROT
+PUSHINT 1
+PUSHREF
+.compute $inline_array_line_204_column_32_ast_id_1193$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 3
+PUSHINT 1
+PUSHREF
+.compute $inline_array_line_203_column_30_ast_id_1188$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 4
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x20457672
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROLL 5
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x204c69676874205965617273
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROLL 7
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 8
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 8
+PUSHINT 0
+NEWDICT
+PUSHINT 9
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+PAIR
+.loc mesh.sol, 0
+
+.globl	libCommander_no_obj_stats_commander_ca012097
+.type	libCommander_no_obj_stats_commander_ca012097, @function
+.inline __libCommander_no_obj_stats_commander_ca012097_macro
+
+.macro libCommander_no_obj_stats_commander_ca012097_macro
+.loc mesh.sol, 227
+UNTUPLE 10
+DROP
+BLKDROP2 1, 8
+BLKDROP2 1, 4
+.loc mesh.sol, 228
+PUSHREF {
+	.blob x
+}
+DUP
+ROT
+PUSHINT 1
+PUSHREF
+.compute $inline_array_line_204_column_32_ast_id_1193$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 3
+PUSHINT 1
+PUSHREF
+.compute $inline_array_line_203_column_30_ast_id_1188$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 4
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x20457672
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROLL 5
+CALLREF {
+	.inline __f1_9adbf691_free_internal_macro
+}
+PUSHREF {
+	.blob x204c69676874205965617273
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+ROLL 7
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 8
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+ROLL 8
+PUSHINT 0
+NEWDICT
+PUSHINT 9
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+PAIR
+.loc mesh.sol, 0
+
+.globl	libCommander_with_obj_target_system_b896b76c
+.type	libCommander_with_obj_target_system_b896b76c, @function
+.inline __libCommander_with_obj_target_system_b896b76c_macro
+
+.macro libCommander_with_obj_target_system_b896b76c_macro
+.loc mesh.sol, 237
+DUP
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+FIRST
+LESS
+PUSH2 S1, S2
+SECOND
+NEQ
+AND
+PUSHCONT {
+	.loc mesh.sol, 238
+	SETINDEX 2
+	.loc mesh.sol, 239
+	TRUE
+	.loc mesh.sol, 0
+}
+IFJMP
+.loc mesh.sol, 241
+DROP
+FALSE
+.loc mesh.sol, 0
+
+.globl	libCommander_no_obj_target_system_b896b76c
+.type	libCommander_no_obj_target_system_b896b76c, @function
+.inline __libCommander_no_obj_target_system_b896b76c_macro
+
+.macro libCommander_no_obj_target_system_b896b76c_macro
+.loc mesh.sol, 237
+DUP
+PUSHINT 3
+PUSHREF
+.compute $inline_array_line_121_column_28_ast_id_722$
+PAIR
+FIRST
+LESS
+PUSH2 S1, S2
+SECOND
+NEQ
+AND
+PUSHCONT {
+	.loc mesh.sol, 238
+	SETINDEX 2
+	.loc mesh.sol, 239
+	DROP
+	TRUE
+	.loc mesh.sol, 0
+}
+IFJMP
+.loc mesh.sol, 241
+DROP2
+FALSE
+.loc mesh.sol, 0
+
+.globl	f1_9adbf691_free_internal
+.type	f1_9adbf691_free_internal, @function
+.inline __f1_9adbf691_free_internal_macro
+
+.macro f1_9adbf691_free_internal_macro
+.loc mesh.sol, 148
+TUPLE 0
+NEWC
+PUSH S2
+PUSHINT 10
+DIV
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x2e
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+ROT
+PUSHINT 10
+MOD
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+.loc mesh.sol, 0
+
+.globl	f3_d7b7913b_free_internal
+.type	f3_d7b7913b_free_internal, @function
+.inline __f3_d7b7913b_free_internal_macro
+
+.macro f3_d7b7913b_free_internal_macro
+.loc mesh.sol, 151
+TUPLE 0
+NEWC
+PUSH S2
+PUSHINT 10
+DIV
+PUSHINT 3
+FALSE
+DUP
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x2e
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+ROT
+PUSHINT 10
+MOD
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+.loc mesh.sol, 0
+
+.globl	_echo_0ed642f2_free_internal
+.type	_echo_0ed642f2_free_internal, @function
+.inline ___echo_0ed642f2_free_internal_macro
+
+.macro _echo_0ed642f2_free_internal_macro
+.loc mesh.sol, 245
+PUSHREF {
+	.blob x6563686f202d656e2027
+}
+SWAP
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob x270a
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 0
+
+.globl	_draw_list_3902012c_free_internal
+.type	_draw_list_3902012c_free_internal, @function
+.inline ___draw_list_3902012c_free_internal_macro
+
+.macro _draw_list_3902012c_free_internal_macro
+.loc mesh.sol, 249
+PUSHREF {
+	.blob x39366d
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+TUPLE 0
+NEWC
+ROLL 6
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x3b
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+PUSH S6
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x48
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+PUSHINT 0
+PUSH S8
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+CTOS
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+PUSHSLICE x20
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+PUSHINT 0
+PUSH S4
+SECOND
+PUSHINT 32
+DICTUGETREF
+THROWIFNOT 50
+CTOS
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob x33376d
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob x45
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 250
+PUSHREF {
+	.blob x45
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+PUSH S5
+GTINT 1
+PUSHCONT {
+	TUPLE 0
+	NEWC
+	PUSH S7
+	DEC
+	UFITS 256
+	PUSHINT 0
+	BLKPUSH 2, 0
+	CALLREF {
+		.inline __convertIntToDecStr_macro
+	}
+	PUSHSLICE x43
+	CALLREF {
+		.inline __storeStringInBuilders_macro
+	}
+	CALLREF {
+		.inline __assembleList_macro
+	}
+	CALLREF {
+		.inline ___e_d935c253_free_internal_macro
+	}
+}
+PUSHCONT {
+	PUSHREF {
+		.blob x
+	}
+}
+IFELSE
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 251
+PUSH S3
+GTINT 0
+PUSHCONT {
+	PUSHREF {
+		.blob x3a
+	}
+	TUPLE 0
+	NEWC
+	PUSH S6
+	PUSHINT 0
+	BLKPUSH 2, 0
+	CALLREF {
+		.inline __convertIntToDecStr_macro
+	}
+	PUSHSLICE x47
+	CALLREF {
+		.inline __storeStringInBuilders_macro
+	}
+	CALLREF {
+		.inline __assembleList_macro
+	}
+	CALLREF {
+		.inline ___e_d935c253_free_internal_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+}
+PUSHCONT {
+	PUSHREF {
+		.blob x
+	}
+}
+IFELSE
+.loc mesh.sol, 252
+PUSH S7
+FIRST
+PUSH S4
+FIRST
+MAX
+.loc mesh.sol, 253
+PUSHINT 1
+PUSHCONT {
+	PUSH2 S0, S1
+	LESS
+}
+PUSHCONT {
+	.loc mesh.sol, 254
+	BLKPUSH 2, 4
+	PUSH2 S2, S11
+	FIRST
+	LESS
+	PUSHCONT {
+		PUSH S9
+		GTINT 0
+		PUSHCONT {
+			PUSHREF {
+				.blob x39366d
+			}
+			CALLREF {
+				.inline ___e_d935c253_free_internal_macro
+			}
+		}
+		PUSHCONT {
+			PUSHREF {
+				.blob x
+			}
+		}
+		IFELSE
+		PUSH2 S3, S12
+		SECOND
+		PUSHINT 32
+		DICTUGETREF
+		THROWIFNOT 50
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+		PUSHREF {
+			.blob x33376d
+		}
+		CALLREF {
+			.inline ___e_d935c253_free_internal_macro
+		}
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+	}
+	PUSHCONT {
+		PUSHREF {
+			.blob x
+		}
+	}
+	IFELSE
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	PUSH S4
+	CTOS
+	SEMPTY
+	PUSHCONT {
+		PUSHREF {
+			.blob x
+		}
+	}
+	PUSHCONT {
+		PUSH3 S4, S2, S7
+		SECOND
+		PUSHINT 32
+		DICTUGETREF
+		THROWIFNOT 50
+		CALLREF {
+			.inline __concatenateStrings_macro
+		}
+	}
+	IFELSE
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S5
+	.loc mesh.sol, 253
+	INC
+	.loc mesh.sol, 0
+}
+WHILE
+BLKDROP 4
+BLKDROP2 5, 1
+.loc mesh.sol, 0
+
+.globl	_draw_roundish_menu_bound_2db3d436_free_internal
+.type	_draw_roundish_menu_bound_2db3d436_free_internal, @function
+.inline ___draw_roundish_menu_bound_2db3d436_free_internal_macro
+
+.macro _draw_roundish_menu_bound_2db3d436_free_internal_macro
+.loc mesh.sol, 259
+PUSHREF {
+}
+PUSH2 S0, S2
+.loc mesh.sol, 261
+ADDCONST -2
+UFITS 256
+PUSHCONT {
+	.loc mesh.sol, 262
+	PUSHREF {
+		.blob xe29480
+	}
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	.loc mesh.sol, 0
+}
+REPEAT
+.loc mesh.sol, 263
+PUSHREF {
+	.blob x45e29482
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+TUPLE 0
+NEWC
+ROLL 6
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x47e29482
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 264
+PUSH S2
+TUPLE 0
+NEWC
+ROLL 7
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x3b
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+ROLL 7
+PUSHINT 0
+BLKPUSH 2, 0
+CALLREF {
+	.inline __convertIntToDecStr_macro
+}
+PUSHSLICE x48e2948c
+CALLREF {
+	.inline __storeStringInBuilders_macro
+}
+CALLREF {
+	.inline __assembleList_macro
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+PUSH S3
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob xe29490
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+POP S3
+.loc mesh.sol, 265
+PUSH2 S2, S0
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+POP S3
+.loc mesh.sol, 266
+PUSH S2
+PUSHREF {
+	.blob x45e2949c
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+PUSH S3
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob xe294a4
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+POP S3
+.loc mesh.sol, 267
+ROLL 3
+ADDCONST -4
+UFITS 256
+PUSHCONT {
+	.loc mesh.sol, 268
+	PUSH2 S2, S0
+	CALLREF {
+		.inline __concatenateStrings_macro
+	}
+	POP S3
+	.loc mesh.sol, 0
+}
+REPEAT
+.loc mesh.sol, 269
+DROP
+SWAP
+PUSHREF {
+	.blob x45e29494
+}
+CALLREF {
+	.inline ___e_d935c253_free_internal_macro
+}
+ROT
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+PUSHREF {
+	.blob xe29498
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 0
+
+.globl	_e_d935c253_free_internal
+.type	_e_d935c253_free_internal, @function
+.inline ___e_d935c253_free_internal_macro
+
+.macro _e_d935c253_free_internal_macro
+.loc mesh.sol, 272
+PUSHREF {
+	.blob x5c3033335b
+}
+SWAP
+CALLREF {
+	.inline __concatenateStrings_macro
+}
+.loc mesh.sol, 0
+
+.macro inline_array_line_119_column_54_ast_id_715
+PUSHREF {
+	.blob x416c69656e206974656d73
+}
+PUSHREF {
+	.blob x47656d2d53746f6e6573
+}
+PUSHREF {
+	.blob x506c6174696e756d
+}
+PUSHREF {
+	.blob x476f6c64
+}
+PUSHREF {
+	.blob x4d696e6572616c73
+}
+PUSHREF {
+	.blob x46757273
+}
+PUSHREF {
+	.blob x4669726561726d73
+}
+PUSHREF {
+	.blob x416c6c6f7973
+}
+PUSHREF {
+	.blob x4d616368696e657279
+}
+PUSHREF {
+	.blob x436f6d707574657273
+}
+PUSHREF {
+	.blob x4e6172636f74696373
+}
+PUSHREF {
+	.blob x4c75787572696573
+}
+PUSHREF {
+	.blob x4c6971756f722f57696e6573
+}
+PUSHREF {
+	.blob x536c61766573
+}
+PUSHREF {
+	.blob x526164696f637469766573
+}
+PUSHREF {
+	.blob x54657874696c6573
+}
+PUSHREF {
+	.blob x466f6f64
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 17
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_121_column_28_ast_id_722
+PUSHREF {
+	.blob x4469736f
+}
+PUSHREF {
+	.blob x4c617665
+}
+PUSHREF {
+	.blob x504c414e455453
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 3
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_141_column_27_ast_id_790
+PUSHINT 2
+PUSHINT 3
+PUSHINT 0
+PUSHINT 8
+PUSHINT 41
+PUSHINT 13120
+PUSHINT 6155
+PUSHINT 2
+TUPLE 8
+PUSHINT 1
+BLKPUSH 2, 0
+PUSHINT 5
+PUSHINT 25
+PUSHINT 7000
+PUSHINT 4116
+PUSHINT 1
+TUPLE 8
+PUSHINT 0
+BLKPUSH 7, 0
+TUPLE 8
+PUSHINT 0
+NEWDICT
+PUSHINT 3
+PUSHCONT {
+	ROT
+	CALLREF {
+		UNTUPLE 8
+		REVERSE 8, 0
+		NEWC
+		STU 16
+		STU 8
+		STU 8
+		STU 8
+		STU 16
+		STU 16
+		STU 16
+		STU 16
+	}
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETB
+}
+REPEAT
+NIP
+
+.macro inline_array_line_155_column_36_ast_id_841
+PUSHREF {
+	.blob x4176657261676520526164697573
+}
+PUSHREF {
+	.blob x47726f73732050726f647563746976697479
+}
+PUSHREF {
+	.blob x506f70756c6174696f6e
+}
+PUSHREF {
+	.blob x546563682e4c6576656c
+}
+PUSHREF {
+	.blob x476f7665726e6d656e74
+}
+PUSHREF {
+	.blob x45636f6e6f6d79
+}
+PUSHREF {
+	.blob x20202020202044415441204f4e
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 7
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_156_column_34_ast_id_853
+PUSHREF {
+	.blob x52696368204167726963756c747572616c
+}
+BLKPUSH 4, 0
+PUSHREF {
+	.blob x41766572616765204167726963756c747572616c
+}
+PUSHREF {
+	.blob x52696368204167726963756c747572616c
+}
+DUP
+PUSHINT 0
+NEWDICT
+PUSHINT 8
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_157_column_29_ast_id_865
+PUSHREF {
+	.blob x4469637461746f7273686970
+}
+BLKPUSH 6, 0
+PUSHREF {
+	.blob x44656d6f6372616379
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 8
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_163_column_22_ast_id_944
+PUSHREF {
+	.blob x20202020202020202020202020
+}
+PUSHREF {
+	.blob x202020202020202020202020
+}
+PUSHREF {
+	.blob x2020202020202020202020
+}
+PUSHREF {
+	.blob x20202020202020202020
+}
+PUSHREF {
+	.blob x202020202020202020
+}
+PUSHREF {
+	.blob x2020202020202020
+}
+PUSHREF {
+	.blob x20202020202020
+}
+PUSHREF {
+	.blob x202020202020
+}
+PUSHREF {
+	.blob x2020202020
+}
+PUSHREF {
+	.blob x20202020
+}
+PUSHREF {
+	.blob x202020
+}
+PUSHREF {
+	.blob x2020
+}
+PUSHREF {
+	.blob x20
+}
+PUSHREF {
+	.blob x
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 14
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_166_column_30_ast_id_969
+PUSHINT 0
+PUSHINT 2
+PUSHINT 1
+DUP
+PUSHINT 0
+BLKPUSH 13, 0
+NEWDICT
+PUSHINT 17
+PUSHCONT {
+	ROT
+	NEWC
+	STU 8
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETB
+}
+REPEAT
+NIP
+
+.macro inline_array_line_168_column_33_ast_id_976
+PUSHREF {
+	.blob x6720
+}
+PUSHREF {
+	.blob x6b67
+}
+PUSHREF {
+	.blob x7420
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 3
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_169_column_36_ast_id_997
+PUSHPOW2 9
+PUSHINT 160
+PUSHINT 644
+PUSHINT 368
+PUSHINT 108
+PUSHINT 524
+PUSHINT 756
+PUSHINT 332
+PUSHINT 588
+PUSHINT 896
+PUSHINT 1520
+PUSHINT 94
+PUSHINT 232
+PUSHINT 60
+PUSHINT 200
+PUSHINT 60
+PUSHINT 36
+PUSHINT 0
+NEWDICT
+PUSHINT 17
+PUSHCONT {
+	ROT
+	NEWC
+	STU 16
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETB
+}
+REPEAT
+NIP
+
+.macro inline_array_line_170_column_35_ast_id_1018
+PUSHINT 0
+PUSHINT 12
+PUSHINT 17
+PUSHINT 14
+PUSHINT 61
+PUSHINT 0
+DUP
+PUSHINT 25
+PUSHINT 10
+PUSHINT 0
+DUP
+PUSHINT 8
+PUSHINT 39
+PUSHINT 14
+PUSHINT 26
+PUSHINT 18
+PUSHINT 17
+PUSHINT 0
+NEWDICT
+PUSHINT 17
+PUSHCONT {
+	ROT
+	NEWC
+	STU 8
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETB
+}
+REPEAT
+NIP
+
+.macro inline_array_line_18_column_27_ast_id_93
+PUSHREF {
+	.blob x
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 1
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_202_column_39_ast_id_1183
+PUSHREF {
+	.blob x45515549504d454e54
+}
+PUSHREF {
+	.blob x
+}
+PUSHREF {
+	.blob x526174696e67
+}
+PUSHREF {
+	.blob x4c6567616c20737461747573
+}
+PUSHREF {
+	.blob x43617368
+}
+PUSHREF {
+	.blob x4675656c
+}
+PUSHREF {
+	.blob x487970657273706163652073797374656d
+}
+PUSHREF {
+	.blob x50726573656e742073797374656d
+}
+PUSHREF {
+	.blob x202020202020434f4d4d414e444552
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 9
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_203_column_30_ast_id_1188
+PUSHREF {
+	.blob x436c65616e
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 1
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_204_column_32_ast_id_1193
+PUSHREF {
+	.blob x4861726d6c657373
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 1
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_205_column_34_ast_id_1204
+PUSHREF {
+	.blob x45736361706520506f64
+}
+PUSHREF {
+	.blob x4675656c2053636f6f7073
+}
+PUSHREF {
+	.blob x4578747261204265616d204c6173657273
+}
+PUSHREF {
+	.blob x45787472612050756c7365204c6173657273
+}
+PUSHREF {
+	.blob x452e432e4d2e2053797374656d
+}
+PUSHREF {
+	.blob x4c6172676520436172676f20426179
+}
+PUSHREF {
+	.blob x46726f6e742050756c7365204c61736572
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 7
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_23_column_82_ast_id_149
+PUSHREF {
+	.blob x4d41524b455420505249434553
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 1
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro inline_array_line_31_column_82_ast_id_232
+PUSHREF {
+	.blob x2053484f52542052414e4745204348415254
+}
+PUSHINT 0
+NEWDICT
+PUSHINT 1
+PUSHCONT {
+	ROT
+	PUSH S2
+	INC
+	XCHG S3
+	ROT
+	PUSHINT 32
+	DICTUSETREF
+}
+REPEAT
+NIP
+
+.macro public_function_selector
+DUP
+PUSHINT 135936061
+EQUAL
+IFJMPREF {
+	.inline __uc
+}
+DUP
+PUSHINT 681518362
+EQUAL
+IFJMPREF {
+	.inline __draw
+}
+DUP
+PUSHINT 976755237
+EQUAL
+IFJMPREF {
+	.inline __onc
+}
+DUP
+PUSHINT 1756716863
+EQUAL
+IFJMPREF {
+	.inline __constructor
+}
+

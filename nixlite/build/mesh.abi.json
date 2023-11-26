@@ -1,0 +1,53 @@
+{
+	"ABI version": 2,
+	"version": "2.3",
+	"header": ["time"],
+	"functions": [
+		{
+			"name": "draw",
+			"inputs": [
+				{"name":"h","type":"uint256"},
+				{"name":"v","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"cmd","type":"string"}
+			]
+		},
+		{
+			"name": "onc",
+			"inputs": [
+				{"name":"h","type":"uint256"},
+				{"name":"s","type":"string"}
+			],
+			"outputs": [
+				{"name":"hout","type":"uint256"},
+				{"name":"cmd","type":"string"}
+			]
+		},
+		{
+			"name": "uc",
+			"inputs": [
+				{"name":"c","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_ram","type":"map(uint32,cell)"}
+	]
+}
