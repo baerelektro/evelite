@@ -11,7 +11,7 @@
         public bool humancolonists { get; set; }
         public string species { get; set; } 
         public uint government { get; set; }
-        public uint economy { get; set; }
+        public uint[] economy { get; set; }
         public uint techlevel { get; set; }
         public uint population { get; set; }
         public uint productivity { get; set; }

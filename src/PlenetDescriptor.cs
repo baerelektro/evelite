@@ -104,11 +104,14 @@ namespace EverliteData
 
         }
 
-        public static string Inhabitans(uint[] seed)
+        public static string[] Inhabitans(uint[] seed)
         {
-            String inhabitans1 = "";
-            String inhabitans2 = "";
-            String inhabitans3 = "";
+            String inhabitans;
+            String inhabitans1;
+            String inhabitans2;
+            String inhabitans3;
+            String basespecies;
+            String species;
 
             uint w0 = seed[0];
             uint w1 = seed[1];
@@ -186,10 +189,78 @@ namespace EverliteData
                     break;
             }
 
+            uint k = (s + w2 / 256 % 4) % 8 + 1;
+            switch (k)
+            {
+                case 1:
+                    basespecies = "Rodents";
+                    break;
+                case 2:
+                    basespecies = "Frogs";
+                    break;
+                case 3:
+                    basespecies = "Lizards";
+                    break;
+                case 4:
+                    basespecies = "Lobsters";
+                    break;
+                case 5:
+                    basespecies = "Birds";
+                    break;
+                case 6:
+                    basespecies = "Humanoids";
+                    break;
+                case 7:
+                    basespecies = "Felines";
+                    break;
+                case 8:
+                    basespecies = "Insects";
+                    break;
+                default:
+                    basespecies = "";
+                    break;
+            }
 
-            return (inhabitans1 + " " + inhabitans2 + " " + inhabitans3);
+            if (w2 % 256 < 127)
+            {
+                inhabitans = "Human Colonists";
+                species = "Human Colonists";
+            }
+            else
+            {
+                inhabitans = inhabitans1 + (inhabitans1 != "" ? " " : "") + inhabitans2 + (inhabitans2 != "" ? " " : "") + inhabitans3 + (inhabitans3 != "" ? " " : "") + basespecies;
+                species = basespecies;
+            }
+
+            string[] ret = { inhabitans, species };
+            return (ret);
 
         }
+
+        public static uint[] Government(uint[] seed)
+        {
+
+            uint w0 = seed[0];
+            uint w1 = seed[1];
+            uint w2 = seed[2];
+            uint B = (w0 + w1 + w2) % 65536;
+            uint C = (w1 + w2 + B) % 65536;
+            uint D = (w2 + B + C) % 65536;
+
+
+            uint government = (w1 % 256) /8 %8;
+            uint economy1 = (w0 / 256) %8;
+            uint economy2 = government < 2 ? economy1/4 * 4 + 2 + economy1 % 2 : economy1;
+            uint techlevel = (1 - economy2/4)*4 + (1 - (economy2/2)%2)*2 + 1 - (economy2%2) + (w1/256)%4 + government/2 + government%2 + 1;
+            uint population = (techlevel - 1) * 4 + government + economy2 + 1;
+            uint productivity = ((1 - economy2 / 4) * 4 + (1 - ((economy2 / 2) % 2)) * 2 + (1 - economy2 % 2) + 3) * (government + 4) * population * 8;
+            uint radius = (((w2 / 256) % 16) + 11) * 256 + (w1 / 256);
+            uint[] ret = { government, economy1, economy2, techlevel, population, productivity, radius};
+            return ret;
+
+
+        }
+
 
 
 
