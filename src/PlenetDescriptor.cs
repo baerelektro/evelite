@@ -267,7 +267,7 @@ namespace EverliteData
         {
             String name = Name(seed);
             String inhabitansname = Inhabitansname(seed);
-            String genWord = "@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
+            
 
             string[,] lookups = { { "fabled", "notable", "well known", "famous", "noted"  },
                                     { "very", "mildly", "most", "reasonably", "" },
@@ -326,28 +326,47 @@ namespace EverliteData
 
             
             
-            uint subseed = (w2 + w1 / 256 * 256 + (w1 % 256 * 2) % 256 + (w1 % 256) / 128) % 65536;
-            uint subseed2 = (w1 / 256) * 256 + ((w1 % 256) * 2) % 256;
+            uint sd = (w2 + w1 / 256 * 256 + (w1 % 256 * 2) % 256 + (w1 % 256) / 128) % 65536;
+            uint sd2 = (w1 / 256) * 256 + ((w1 % 256) * 2) % 256;
 
-            uint u = 0;
-            while (u < 22)
+            int u = 0;
+
+
+            while (u < 18)
             {
-                int g5ColumnOffset = (int)subseed / 13056;
+                int g5ColumnOffset = (int)sd / 13056;
 
                 if (g5ColumnOffset > 3)
                 {
                     g5ColumnOffset = 4;
                 }
+                String temp = planetarydescription;
 
                 planetarydescription = Convert(planetarydescription, lookups, g5ColumnOffset);
 
-                uint stemp = (subseed2 + subseed / 256 * 256 + (subseed % 256 * 2) % 256 + (subseed % 256) / 128) % 65536;
-                subseed2 = (subseed / 256) * 256 + ((subseed % 256) * 2) % 256;
-                subseed = stemp;
+
+                uint stemp;
+
+                if (planetarydescription == temp)
+                {
+                    u++;
+                    stemp = (sd2 + sd / 256 * 256 + (sd % 256 * 2) % 256 + (sd % 256) / 128) % 65536;
+                    sd2 = (sd / 256) * 256 + ((sd % 256) * 2) % 256;
+                    sd = stemp;
+                    break;
+
+                }
+
+                stemp = (sd2 + sd / 256 * 256 + (sd % 256 * 2) % 256 + (sd % 256) / 128) % 65536;
+                sd2 = (sd / 256) * 256 + ((sd % 256) * 2) % 256;
+                sd = stemp;
                 u++;
+
             }
 
-            
+
+
+
 
             static string Convert(string input, string[,] lookups, int g5ColumnOffset)
             {
@@ -380,11 +399,61 @@ namespace EverliteData
             }
 
 
+            static string Stringpadding(uint sd, uint sd2)
+            {
+                String genWord = "ABOUSEITILETSTONLONUTHNOALLEXEGEZACEBISOUSESARMAINDIREA’ERATENBERALAVETIEDORQUANTEISRION";
+                uint w;
 
-            // return planetarydescription;
+                uint t1 = sd2/256%4 +1;
+
+                uint t2 = ((sd) / 256 % 64 / 2) * 2 + 1;
+
+                String k2 = genWord.Substring((int)t2 - 1, 2);
+                
+                w = (sd2 + sd / 256 * 256 + (sd % 256 * 2) % 256 + (sd % 256) / 128) % 65536;
+                sd2 = (sd / 256) * 256 + ((sd % 256) * 2) % 256;
+                sd = w;
+
+                uint t3 = ((sd) / 256 % 64 / 2) * 2 + 1;
+                String k3 = genWord.Substring((int)t3 - 1, 2);
+
+                w = (sd2 + sd / 256 * 256 + (sd % 256 * 2) % 256 + (sd % 256) / 128) % 65536;
+                sd2 = (sd / 256) * 256 + ((sd % 256) * 2) % 256;
+                sd = w;
+
+                uint t4 = ((sd) / 256 % 64 / 2) * 2 + 1;
+                String k4 = genWord.Substring((int)t4 - 1, 2);
+
+
+                w = (sd2 + sd / 256 * 256 + (sd % 256 * 2) % 256 + (sd % 256) / 128) % 65536;
+                sd2 = (sd / 256) * 256 + ((sd % 256) * 2) % 256;
+                sd = w;
+
+                uint t5 = ((sd) / 256 % 64 / 2) * 2 + 1;
+
+
+                String k5 = genWord.Substring((int)t5 - 1, 2);
+
+                if (t1 < 3)
+                {
+                    return (k2 +  k3 +  k4 +  k5).Remove((int)t1 * 2);
+                }
+                else
+                {
+                    return (k2 + k3 + k4 + k5);
+                }
+
+            }
+
+            
+            
+
+
 
             planetarydescription = planetarydescription.Replace("%H", char.ToUpper(name[0]) + name.ToLower().Substring(1));
             planetarydescription = planetarydescription.Replace("%I", inhabitansname.ToLower());
+            planetarydescription = planetarydescription.Replace("%R", Stringpadding(sd, sd2).ToLower());
+
             return planetarydescription;
 
         }
