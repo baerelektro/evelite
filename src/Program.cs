@@ -62,13 +62,19 @@ namespace EverliteData
                 planet.productivity = gov[5];
                 planet.planetradius = gov[6];
                 planet.planetarydescription = PlanetDescriptor.PlanetaryDescription(array);
-                Console.WriteLine("{0}", planet.name);
-                //Console.WriteLine("{0} {1}", planet.inhabitansname, planet.inhabitans);
-                //Console.WriteLine("{0}", planet.species);
-                //Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}", planet.government, planet.economy[0], planet.economy[1], planet.techlevel, (float)planet.population/10, planet.productivity, planet.planetradius);
-                //Console.WriteLine("{0} {1} {2}", planet.random[0], planet.random[1], planet.random[2]);
-                //Console.WriteLine("{0} {1}", planet.position[0], planet.position[1]);
-                Console.WriteLine("{0}", planet.planetarydescription);
+                Console.WriteLine("Name of planet {0}", planet.name);
+                Console.WriteLine("Inhabitants of the planet {0}", planet.inhabitans);
+                Console.WriteLine("Type of inhabitants {0}", planet.species);
+                Console.WriteLine("State structure {0}", planet.government);
+                Console.WriteLine("Economy of the planet {0} {1}", planet.economy[0], planet.economy[1]);
+                Console.WriteLine("Technical level {0}", planet.techlevel);
+                Console.WriteLine("Population in billions {0}", (float)planet.population/10);
+                Console.WriteLine("Productivity {0}", planet.productivity);
+                Console.WriteLine("Planetradius {0}", planet.planetradius);
+                Console.WriteLine("seed: {0} {1} {2}", planet.random[0], planet.random[1], planet.random[2]);
+                Console.WriteLine("Planet coordinates X - {0}, Y - {1}", planet.position[0], planet.position[1]);
+                Console.WriteLine("Description: {0}", planet.planetarydescription);
+                Console.WriteLine();
                 index++;
             }   
         
