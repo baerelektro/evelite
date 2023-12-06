@@ -61,12 +61,14 @@ namespace EverliteData
                 planet.population = gov[4];
                 planet.productivity = gov[5];
                 planet.planetradius = gov[6];
+                planet.planetarydescription = PlanetDescriptor.PlanetaryDescription(array);
                 Console.WriteLine("{0}", planet.name);
-                Console.WriteLine("{0} {1}", planet.inhabitansname, planet.inhabitans);
-                Console.WriteLine("{0}", planet.species);
-                Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}", planet.government, planet.economy[0], planet.economy[1], planet.techlevel, (float)planet.population/10, planet.productivity, planet.planetradius);
-                Console.WriteLine("{0} {1} {2}", planet.random[0], planet.random[1], planet.random[2]);
-                Console.WriteLine("{0} {1}", planet.position[0], planet.position[1]);
+                //Console.WriteLine("{0} {1}", planet.inhabitansname, planet.inhabitans);
+                //Console.WriteLine("{0}", planet.species);
+                //Console.WriteLine("{0} {1} {2} {3} {4} {5} {6}", planet.government, planet.economy[0], planet.economy[1], planet.techlevel, (float)planet.population/10, planet.productivity, planet.planetradius);
+                //Console.WriteLine("{0} {1} {2}", planet.random[0], planet.random[1], planet.random[2]);
+                //Console.WriteLine("{0} {1}", planet.position[0], planet.position[1]);
+                Console.WriteLine("{0}", planet.planetarydescription);
                 index++;
             }   
         
