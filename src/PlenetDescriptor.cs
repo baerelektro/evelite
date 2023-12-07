@@ -1,6 +1,6 @@
 ﻿using System;
-
 using System.Collections.Generic;
+using System.Text;
 
 namespace EverliteData
 {
@@ -9,98 +9,79 @@ namespace EverliteData
     {
         public static string Name(uint[] seed)
         {
-            String GenWord = "'@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
+            String genWord = "'@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
+            var wordIndices = CalculateWordIndices(seed);
 
-            uint w0 = seed[0];
-            uint w1 = seed[1];
-            uint w2 = seed[2];
-            uint B = (w0 + w1 + w2) % 65536;
-            uint C = (w1 + w2 + B) % 65536;
-            uint D = (w2 + B + C) % 65536;
-
-            string Name = "";
-            int NameLange = (int)((w0 % 256) / 64) % 2 == 0 ? 3 : 4;
-
-            if (NameLange == 4)
+            var nameBuilder = new StringBuilder();
+            foreach (var index in wordIndices)
             {
-                Name = GenWord.Substring((int)((w2 / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((B / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((C / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((D / 256 % 32) * 2 + 1), 2);
+                nameBuilder.Append(genWord.Substring(index * 2 + 1, 2));
             }
 
-            if (NameLange == 3)
-            {
-                Name = GenWord.Substring((int)((w2 / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((B / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((C / 256 % 32) * 2 + 1), 2);
-            }
-
-            Name = Name.Replace("@", "");
-            Name = Name.Replace("'", "");
-
-
-            return (Name);
+            return nameBuilder.ToString().Replace("@", "").Replace("'", "");
 
         }
 
+        private static IEnumerable<int> CalculateWordIndices(uint[] seed)
+        {
+            var (w0, w1, w2) = (seed[0], seed[1], seed[2]);
+            var B = (w0 + w1 + w2) % 65536;
+            var C = (w1 + w2 + B) % 65536;
+            var D = (w2 + B + C) % 65536;
+
+            var nameLength = (int)((w0 % 256) / 64) % 2 == 0 ? 3 : 4;
+
+            yield return (int)(w2 / 256 % 32);
+            yield return (int)(B / 256 % 32);
+            yield return (int)(C / 256 % 32);
+            if (nameLength == 4)
+            {
+                yield return (int)(D / 256 % 32);
+            }
+        }
+
+        
         public static string Inhabitansname(uint[] seed)
         {
-            String GenWord = "'@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
+            String genWord = "'@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
 
-            uint w0 = seed[0];
-            uint w1 = seed[1];
-            uint w2 = seed[2];
-            uint B = (w0 + w1 + w2) % 65536;
-            uint C = (w1 + w2 + B) % 65536;
-            uint D = (w2 + B + C) % 65536;
+            var wordIndices = CalculateWordIndices(seed);
 
-            string name = "";
-            int nameLange = (int)((w0 % 256) / 64) % 2 == 0 ? 3 : 4;
-
-            if (nameLange == 4)
+            var nameBuilder = new StringBuilder();
+            foreach (var index in wordIndices)
             {
-                name = GenWord.Substring((int)((w2 / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((B / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((C / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((D / 256 % 32) * 2 + 1), 2);
+                nameBuilder.Append(genWord.Substring(index * 2 + 1, 2));
             }
 
-            if (nameLange == 3)
-            {
-                name = GenWord.Substring((int)((w2 / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((B / 256 % 32) * 2 + 1), 2) +
-                       GenWord.Substring((int)((C / 256 % 32) * 2 + 1), 2);
-            }
+            nameBuilder =  nameBuilder.Replace("@", "").Replace("'", "");
 
-            name = name.Replace("@", "");
-            name = name.Replace("'", "");
+    
 
-            string s = name.Substring(name.Length - 1);
+            String s = nameBuilder[0].ToString();
 
             switch (s)
             {
                 case "A":
-                    name  = name + "N";
+                    nameBuilder = nameBuilder.Append("N");
                     break;
                 case "E":
-                    name = name + "SE";
+                    nameBuilder = nameBuilder.Append("SE");
                     break;
                 case "I":
-                    name = name + "AN";
+                    nameBuilder = nameBuilder.Append("AN");
                     break;
                 case "O":
-                    name = name + "ESE";
+                    nameBuilder = nameBuilder.Append("ESE");
                     break;
                 case "U":
-                    name = name + "AN";
+                    nameBuilder = nameBuilder.Append("AN");
                     break;
                 default:
-                    name = name + "IAN";
+                    nameBuilder = nameBuilder.Append("IAN");
                     break;
             }
 
-            return (name);
+            return (nameBuilder.ToString());
 
         }
 
@@ -458,9 +439,8 @@ namespace EverliteData
 
         }
 
-
-
-
     }
+
+
 
 }
