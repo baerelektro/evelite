@@ -74,135 +74,43 @@ namespace EverliteData
 
         public static string[] Inhabitans(uint[] seed)
         {
-            String inhabitans;
-            String inhabitans1;
-            String inhabitans2;
-            String inhabitans3;
-            String basespecies;
-            String species;
-
             uint w0 = seed[0];
             uint w1 = seed[1];
             uint w2 = seed[2];
             uint B = (w0 + w1 + w2) % 65536;
-            uint C = (w1 + w2 + B) % 65536;
-            uint D = (w2 + B + C) % 65536;
 
-            uint i = (w2 / 256) / 4 % 8 + 1;
-            switch (i)
-            {
-                case 1:
-                    inhabitans1 = "Large";
-                    break;
-                case 2:
-                    inhabitans1 = "Fierce";
-                    break;
-                case 3:
-                    inhabitans1 = "Small";
-                    break;
-                default:
-                    inhabitans1 = "";
-                    break;
-            }
-
-            uint j = (w2 / 256) / 32 + 1;
-            switch (j)
-            {
-                case 1:
-                    inhabitans2 = "Green";
-                    break;
-                case 2:
-                    inhabitans2 = "Red";
-                    break;
-                case 3:
-                    inhabitans2 = "Yellow";
-                    break;
-                case 4:
-                    inhabitans2 = "Blue";
-                    break;
-                case 5:
-                    inhabitans2 = "Black";
-                    break;
-                case 6:
-                    inhabitans2 = "Harmless";
-                    break;
-                default:
-                    inhabitans2 = "";
-                    break;
-            }
-
-            uint s = ((w0 / 256) % 2 + (w1 / 256) % 2) % 2 + (((w0 / 512) % 2 + (w1 / 512) % 2) % 2) * 2 + (((w0 / 1024) % 2 + (w1 / 1024) % 2) % 2) * 4;
-            switch (s + 1)
-            {
-                case 1:
-                    inhabitans3 = "Slimy";
-                    break;
-                case 2:
-                    inhabitans3 = "Bug-Eyed";
-                    break;
-                case 3:
-                    inhabitans3 = "Horned";
-                    break;
-                case 4:
-                    inhabitans3 = "Bony";
-                    break;
-                case 5:
-                    inhabitans3 = "Fat";
-                    break;
-                case 6:
-                    inhabitans3 = "Furry";
-                    break;
-                default:
-                    inhabitans3 = "";
-                    break;
-            }
-
-            uint k = (s + w2 / 256 % 4) % 8 + 1;
-            switch (k)
-            {
-                case 1:
-                    basespecies = "Rodents";
-                    break;
-                case 2:
-                    basespecies = "Frogs";
-                    break;
-                case 3:
-                    basespecies = "Lizards";
-                    break;
-                case 4:
-                    basespecies = "Lobsters";
-                    break;
-                case 5:
-                    basespecies = "Birds";
-                    break;
-                case 6:
-                    basespecies = "Humanoids";
-                    break;
-                case 7:
-                    basespecies = "Felines";
-                    break;
-                case 8:
-                    basespecies = "Insects";
-                    break;
-                default:
-                    basespecies = "";
-                    break;
-            }
+            string inhabitans = GetInhabitansDescription(w0, w1, w2, B);
+            string species = GetSpeciesDescription(w2);
 
             if (w2 % 256 < 127)
             {
-                inhabitans = "Human Colonists";
-                species = "Human Colonists";
+                return new string[] { "Human Colonists", "Human Colonists" };
             }
             else
             {
-                inhabitans = inhabitans1 + (inhabitans1 != "" ? " " : "") + inhabitans2 + (inhabitans2 != "" ? " " : "") + inhabitans3 + (inhabitans3 != "" ? " " : "") + basespecies;
-                species = basespecies;
+                return new string[] { inhabitans, species };
             }
+        }
 
-            string[] ret = { inhabitans, species };
-            return (ret);
+        private static string GetInhabitansDescription(uint w0, uint w1, uint w2, uint B)
+        {
+            var builder = new StringBuilder();
 
+            builder.Append(GetDescriptorBasedOnSeedValue((w2 / 256) / 4 % 8, new string[] { "", "Large", "Fierce", "Small" }));
+            builder.Append(GetDescriptorBasedOnSeedValue((w2 / 256) / 32, new string[] { "", "Green", "Red", "Yellow", "Blue", "Black", "Harmless" }));
+            builder.Append(GetDescriptorBasedOnSeedValue(((w0 / 256) % 2 + (w1 / 256) % 2) % 2 + (((w0 / 512) % 2 + (w1 / 512) % 2) % 2) * 2 + (((w0 / 1024) % 2 + (w1 / 1024) % 2) % 2) * 4, new string[] { "", "Slimy", "Bug-Eyed", "Horned", "Bony", "Fat", "Furry" }));
+
+            return builder.ToString().Trim();
+        }
+
+        private static string GetSpeciesDescription(uint w2)
+        {
+            return GetDescriptorBasedOnSeedValue((w2 / 256 % 4) % 8, new string[] { "", "Rodents", "Frogs", "Lizards", "Lobsters", "Birds", "Humanoids", "Felines", "Insects" });
+        }
+
+        private static string GetDescriptorBasedOnSeedValue(uint index, string[] descriptors)
+        {
+            return index < descriptors.Length ? (descriptors[index] != "" ? " " + descriptors[index] : "") : "";
         }
 
         public static uint[] Government(uint[] seed)
