@@ -40,11 +40,10 @@ namespace EverliteData
             }
         }
 
-        
+
         public static string Inhabitansname(uint[] seed)
         {
-            String genWord = "'@@LEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
-
+            var genWord = "ABOUSEITILETSTONLONUTHNOALLEXEGEZACEBISOUSESARMAINDIREA'ERATENBERALAVETIEDORQUANTEISRION";
             var wordIndices = CalculateWordIndices(seed);
 
             var nameBuilder = new StringBuilder();
@@ -53,36 +52,24 @@ namespace EverliteData
                 nameBuilder.Append(genWord.Substring(index * 2 + 1, 2));
             }
 
-            nameBuilder =  nameBuilder.Replace("@", "").Replace("'", "");
+            var name = nameBuilder.ToString().Replace("@", "").Replace("'", "");
+            return AddSuffixBasedOnLastChar(name);
+        }
 
-    
 
-            String s = nameBuilder[0].ToString();
+        private static string AddSuffixBasedOnLastChar(string name)
+        {
+            char lastChar = name[name.Length - 1];
 
-            switch (s)
+            return lastChar switch
             {
-                case "A":
-                    nameBuilder = nameBuilder.Append("N");
-                    break;
-                case "E":
-                    nameBuilder = nameBuilder.Append("SE");
-                    break;
-                case "I":
-                    nameBuilder = nameBuilder.Append("AN");
-                    break;
-                case "O":
-                    nameBuilder = nameBuilder.Append("ESE");
-                    break;
-                case "U":
-                    nameBuilder = nameBuilder.Append("AN");
-                    break;
-                default:
-                    nameBuilder = nameBuilder.Append("IAN");
-                    break;
-            }
-
-            return (nameBuilder.ToString());
-
+                'A' => name + "N",
+                'E' => name + "SE",
+                'I' => name + "AN",
+                'O' => name + "ESE",
+                'U' => name + "AN",
+                _ => name + "IAN",
+            };
         }
 
         public static string[] Inhabitans(uint[] seed)
